@@ -14,6 +14,17 @@ module.exports.checkID = (req, res, next, val) => {
   next();
 };
 
+module.exports.checkBody = (req, res, next) => {
+  if (req.body.name && req.body.price) {
+    next();
+  } else {
+    return res.status(400).json({
+      status: 'error',
+      message: 'Invalid Request Body',
+    });
+  }
+};
+
 module.exports.getAllTours = (req, res) => {
   res.status(200).json({
     status: 'success',
@@ -45,7 +56,7 @@ module.exports.createTour = (req, res) => {
   };
   tours.push(newTour);
   fs.writeFile(
-    `${__dirname}/dev-data/data/tours-simple.json`,
+    `${__dirname}/../dev-data/data/tours-simple.json`,
     JSON.stringify(tours),
     (err) => {
       if (!err)
