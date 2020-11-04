@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon server",
+    "start": "nodemon server",
     "start:prod": " SET NODE_ENV=production && nodemon server"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.10.11",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
