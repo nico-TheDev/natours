@@ -15,9 +15,9 @@ mongoose
     useFindAndModify: false,
     useUnifiedTopology: true,
   })
-  .then(() => console.log('CONNECTED TO THE NATOURS DB'));
-
-
-app.listen(port, () => {
-  console.log('SERVER RUNNING');
-});
+  .then(() => {
+    console.log('CONNECTED TO THE NATOURS DB');
+    app.listen(port, () => {
+      console.log('SERVER RUNNING');
+    });
+  });
